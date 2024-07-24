@@ -1,5 +1,6 @@
 import ffmpegStatic from "ffmpeg-static";
 import ffmpeg from "fluent-ffmpeg";
+import { logger } from "./logs.js";
 
 export const createAudioFromVideo = (input, output) =>
   new Promise((resolve, reject) => {
@@ -12,7 +13,7 @@ export const createAudioFromVideo = (input, output) =>
         resolve();
       })
       .on("error", (error) => {
-        console.error(error);
+        logger(error);
         reject();
       });
   });
