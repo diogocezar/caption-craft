@@ -1,5 +1,34 @@
 import fs from "fs";
 
+export const getFiles = (directory) => {
+  const files = [];
+  const regex = /\.mov$/i;
+  fs.readdirSync(directory).forEach((file) => {
+    if (regex.test(file)) {
+      files.push(file);
+    }
+  });
+  return files;
+};
+
+export const createDirectory = (directory) => {
+  if (!fs.existsSync(directory)) {
+    fs.mkdirSync(directory);
+  }
+};
+
+export const directoryExists = (directory) => {
+  try {
+    return fs.statSync(directory).isDirectory();
+  } catch (err) {
+    return false;
+  }
+};
+
+export const removeFile = (file) => {
+  fs.unlinkSync(file);
+};
+
 export const fileExists = (file) => {
   return fs.existsSync(file);
 };
