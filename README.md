@@ -43,7 +43,7 @@ pip install auto-editor
 1. Siga as instruções no [site oficial do Ollama](https://ollama.com/) para configurar a API local.
 2. Certifique-se de que a API está rodando corretamente.
 
-## Instalação
+## Instalação ⬇️
 
 1. Clone o repositório:
 
@@ -58,7 +58,7 @@ cd CaptionCraft
 pnpm i
 ```
 
-## Preparação
+## Preparação 🚀
 
 1. Coloque seus vídeos em uma pasta no root do projeto. Por exemplo: `data/sample.mov`
 
