@@ -28,12 +28,14 @@ export const transcribeAudio = async (input) => {
       stride_length_s: 4,
       language: "portuguese",
       task: "transcribe",
+      return_timestamps: true,
     };
     let transcriber = await pipeline(
       "automatic-speech-recognition",
       "Xenova/whisper-small",
     );
-    return transcriber(audioData, options);
+    const result = await transcriber(audioData, options);
+    return result;
   } catch (error) {
     logger(error);
   }

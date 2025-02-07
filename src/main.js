@@ -52,7 +52,7 @@ export const main = async (directory, fileName) => {
       `${fileDir}/transcribed`,
       "txt",
     );
-    saveFile(transcribedAudio.text, transcribedAudioFile);
+    saveFile(JSON.stringify(transcribedAudio), transcribedAudioFile);
     logger.pipe(
       `Transcription file was created successfully and saved as '${transcribedAudioFile}'`,
     );
